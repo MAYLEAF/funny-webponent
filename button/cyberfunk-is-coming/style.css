@@ -29,6 +29,8 @@ body {
     --label-size: 9px;
     --shadow-secondary-hue: 60;
     --shadow-secondary: hsl(var(--shadow-secondary-hue), 90%, 60%);
+    --clip: polygon(0 0, 100% 0, 100% 100%, 8% 100%, 0 70%);
+    --border: 4px;
     font-family: 'Cyber', sans-serif;
     color: var(--color);
     text-transform: uppercase;
@@ -44,6 +46,18 @@ body {
     line-height: 75px;
     box-shadow: inset -3px 0 0 var(--shadow-primary);
     clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, 10% 110%, -10% 40%);
+}
+
+.cybr-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary);
+    clip-path: var(--clip);
+    z-index: -1;
 }
 
 .cybr-btn__tag {
@@ -63,9 +77,24 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 0 4px var(--shadow-primary);
+    top: calc(var(--border) * -1);
+    left: calc(var(--border) * -1);
+    right: calc(var(--border) * -1);
+    bottom: calc(var(--border) * -1);
+    background: var(--shadow-primary);
     text-shadow: 2px 2px var(--shadow-primary), -2px -2px var(--shadow-secondary);
+    box-shadow: 0 0 0 4px var(--shadow-primary);
+    clip-path: var(--clip);
 }
 
+.cybr-btn__glitch:before {
+    content: '';
+    position:absolute;
+    top: calc(var(--border) * 1);
+    right: calc(var(--border) * 1);
+    bottom: calc(var(--border) * 1);
+    left: calc(var(--border) * 1);
+    clip-path: var(--clip);
+    background: var(--primary);
+    z-index: -1;
+}
