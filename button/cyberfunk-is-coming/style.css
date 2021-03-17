@@ -10,7 +10,7 @@
 
 body {
     display: flex;
-    align-items: center;
+    algn-items: center;
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
@@ -26,6 +26,9 @@ body {
     --color: hsl(0, 0%, 100%);
     --font-size: 26px;
     --shadow-primary-hue: 180;
+    --label-size: 9px;
+    --shadow-secondary-hue: 60;
+    --shadow-secondary: hsl(var(--shadow-secondary-hue), 90%, 60%);
     font-family: 'Cyber', sans-serif;
     color: var(--color);
     text-transform: uppercase;
@@ -33,6 +36,7 @@ body {
     font-size: var(--font-size);
     outline: transparent;
     letter-spacing: 2px;
+    position: relative;
     font-weight: 700;
     border: 0;
     min-width: 300px;
@@ -42,3 +46,26 @@ body {
 
 }
 
+.cybr-btn__tag {
+    position: absolute;
+    padding: 1px 4px;
+    letter-spacing: 1px;
+    line-height:1;
+    bottom: -5%;
+    right: 5%;
+    background: var(--shadow-secondary);
+    color: hsl(0, 0%, 0%);
+    font-size: var(--label-size);
+    box-shadow: 2px 0 inset var(--shadow-primary);
+}
+
+
+.cybr-btn__glitch {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 0 4px var(--shadow-primary);
+    text-shadow: 2px 2px var(--shadow-primary), -2px -2px var(--shadow-secondary);
+}
