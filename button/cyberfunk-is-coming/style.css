@@ -33,8 +33,8 @@ body {
     --border: 4px;
     font-family: 'Cyber', sans-serif;
     color: var(--color);
+    background: transparent;
     text-transform: uppercase;
-    background: var(--primary);
     font-size: var(--font-size);
     outline: transparent;
     letter-spacing: 2px;
@@ -45,7 +45,6 @@ body {
     height: 75px;
     line-height: 75px;
     box-shadow: inset -3px 0 0 var(--shadow-primary);
-    clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, 10% 110%, -10% 40%);
 }
 
 .cybr-btn:before {
@@ -75,21 +74,19 @@ body {
 
 .cybr-btn__glitch {
     position: absolute;
-    height: 100%;
-    width: 100%;
     top: calc(var(--border) * -1);
     left: calc(var(--border) * -1);
     right: calc(var(--border) * -1);
     bottom: calc(var(--border) * -1);
     background: var(--shadow-primary);
     text-shadow: 2px 2px var(--shadow-primary), -2px -2px var(--shadow-secondary);
-    box-shadow: 0 0 0 4px var(--shadow-primary);
     clip-path: var(--clip);
+    transform: translate(0, 100%);
 }
 
 .cybr-btn__glitch:before {
     content: '';
-    position:absolute;
+    position: absolute;
     top: calc(var(--border) * 1);
     right: calc(var(--border) * 1);
     bottom: calc(var(--border) * 1);
